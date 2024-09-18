@@ -16,6 +16,7 @@ let db;
 MongoClient.connect(mongoUrl)
     .then(client => {
         console.log('Connected to Database');
+        console.log(dbName)
         db = client.db(dbName);
 
         // Define routes only after connection is successful
