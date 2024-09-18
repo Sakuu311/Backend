@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+
 
 // Middleware to serve static files and parse request body
 app.use(express.static('public'));
@@ -59,8 +60,6 @@ app.get('/get_feedback', (req, res) => {
             res.status(500).json({ success: false, message: 'Error fetching feedback' });
         });
 });
-
-
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
