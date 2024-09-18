@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
 const app = express();
-const port = process.env.PORT || 4000;
+const cors = require('cors')
+const port = process.env.PORT || 4001;
 
 
 // Middleware to serve static files and parse request body
