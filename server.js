@@ -8,6 +8,7 @@ const port = process.env.PORT || 4000;
 // Middleware to serve static files and parse request body
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(cors());
 
 const mongoUrl = 'mongodb://localhost:27017';
 const dbName = 'feedbackDB';
